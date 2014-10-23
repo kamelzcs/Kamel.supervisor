@@ -3,12 +3,12 @@
 dependencies: []
 
 galaxy_info:
-  author: klen
-  company: Stouts
+  author: Kamel
+  company: Kamel
   description: Manage supervisor
   license: MIT
   platforms:
-  - name: Ubuntu
+  - name: CentOS 6
     versions:
     - all
   categories:

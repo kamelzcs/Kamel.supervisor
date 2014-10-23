@@ -1,7 +1,7 @@
-Stouts.supervisor
+Kamel.supervisor
 =================
 
-[![Build Status](https://travis-ci.org/Stouts/Stouts.supervisor.png)](https://travis-ci.org/Stouts/Stouts.supervisor)
+Most of the code is from [Stouts.supervisor](https://github.com/Stouts/Stouts.supervisor), just made it work under CentOS 6.5.
 
 Ansible role which manage [supervisor](http://supervisord.org)
 Ansible role apt which help you with:
@@ -16,16 +16,17 @@ Ansible role apt which help you with:
 The role variables and default values.
 
 ```yaml
+
 supervisor_enabled: yes                   # The role is enabled
 supervisor_version: "3.1.2"
-supervisor_bindir: "/usr/local/bin"
+supervisor_bindir: "/usr/bin"
 supervisor_bin: "{{ supervisor_bindir }}/supervisord"
 supervisor_pid: /var/run/supervisord.pid
 supervisor_nofile: 65356                  # Set max opened files (set blank to default limits)
-supervisor_cfgdir: /etc/supervisor        # path to config directory
+supervisor_cfgdir: /etc
 supervisor_conf_file: "{{ supervisor_cfgdir }}/supervisord.conf"
 supervisor_logdir: /var/log/supervisor    # path to logs directory
-supervisor_incdir: "{{supervisor_cfgdir}}/conf.d" # path to include directory
+supervisor_incdir: "{{supervisor_cfgdir}}/supervisord.d" # path to include directory
 supervisor_tasks: []                      # List of supervisor programs
                                           # Ex. supervisor_tasks:
                                           #       - name: <name>
@@ -38,7 +39,7 @@ supervisor_superlance: no                 # Install superlance (http://superlanc
 
 #### Usage
 
-Add `Stouts.supervisor` to your roles and set vars in your playbook file.
+Add `Kamel.supervisor` to your roles and set vars in your playbook file.
 
 Example:
 
@@ -47,7 +48,7 @@ Example:
 - hosts: all
 
   roles:
-    - Stouts.supervisor
+    - Kamel.supervisor
 
   vars:
     supervisor_tasks:
@@ -67,4 +68,4 @@ Licensed under the MIT License. See the LICENSE file for details.
 
 #### Feedback, bug-reports, requests, ...
 
-Are [welcome](https://github.com/Stouts/Stouts.supervisor/issues)!
+Are [welcome](https://github.com/kamelzcs/Kamel.supervisor/issues)!
