@@ -8,9 +8,9 @@ galaxy_info:
   description: Manage supervisor
   license: MIT
   platforms:
-  - name: CentOS 6
+  - name: EL
     versions:
-    - all
+    - 6
   categories:
   - development
   - system
